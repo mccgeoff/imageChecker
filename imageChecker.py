@@ -2,8 +2,8 @@ import os
 
 # Checks for images not used in any files.
 
-imagePath = "/home/mccgeoff/workplace/mccgeoff/vpc/src/AWSVPCDocs/latest/ug/images"
-filePath = "/home/mccgeoff/workplace/mccgeoff/vpc/src/AWSVPCDocs/latest/ug/"
+imagePath = " "
+filePath = " "
 
 fileList = (os.listdir(filePath))
 imageList = (os.listdir(imagePath))
