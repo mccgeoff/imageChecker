@@ -1,6 +1,6 @@
 import os
 
-# Checks for images not used in any files.
+# Checks for images *not* used in any files.
 
 imagePath = " "
 filePath = " "
