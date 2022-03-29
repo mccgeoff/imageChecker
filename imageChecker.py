@@ -19,18 +19,17 @@ os.chdir(filePath)
 
 for image in imageList:
 
-    # For each file in the fileList directory, check that the file is a file, not a directory, and read the file. If the image in is in one of the files, add it to the usedImagesIndex list. 
+    # For each file in the fileList directory, check that the file is actually a file and not a directory, then read the file. 
+    # If the image in is in one of the files, add it to the usedImagesIndex list. 
 
     for file in fileList:
         if os.path.isfile(file):
-            with open(file, "r") as file_object:
+            with open(file, "r", errors="ignore") as file_object:
                 readfile = file_object.read()
             if image in readfile:
                 usedImagesIndex.append(image)
-            else:
-                pass          
-        else:
-            pass
+                continue          
+        continue
     
     # Remove duplicates in the usedImagesIndex list
 
@@ -38,10 +37,10 @@ for image in imageList:
 
     # Check if image is in usedImages list. If not, add image to unusedImages list. 
 
-    if image in usedImages:
-        pass
-    else:
+    if image not in usedImages:
         unusedImages.append(image)
+    else:
+        continue
 
 # Print the results.
 
